@@ -9,9 +9,10 @@ var answerArray = [];
 // Now to reference that spot where the secret word is, just use 'secretWordFields'
 var secretWord = document.getElementById("secret-word");
 // set number of guesses initially to zero
-var guessNum = 0;
+var guessNum = 7;
 var guesses = document.getElementById("guesses");
 guesses.innerHTML = guessNum;
+// this is the input where they are typing in guesses
 var guessedLetter = document.getElementById("guess");
 
 // start the game or restart it
@@ -30,7 +31,7 @@ function setUpWord() {
 function makeGuess() {
   console.log("you guessed the letter " + guessedLetter.value);
   // add one to the number of guesses
-  guessNum++;
+  guessNum--;
   // display the new number of guesses
   guesses.innerHTML = guessNum;
   // clear the input for the next letter
@@ -47,21 +48,22 @@ function drawGuy() {
   var guyId = document.getElementById("guy");
   var guy = " O ";
   // based on which position, show the guy in various degrees of peril
-  if (guessNum === 1) {
+  if (guessNum === 6) {
     guyId.innerHTML = "&nbsp;O ";
-  } else if (guessNum == 2) {
+  } else if (guessNum === 5) {
     guyId.innerHTML = "&nbsp;O <br> &nbsp;|";
-  } else if (guessNum == 3) {
+  } else if (guessNum === 4) {
     guyId.innerHTML = "&nbsp;O <br> /|";
-  } else if (guessNum == 4) {
+  } else if (guessNum === 3) {
     guyId.innerHTML = "&nbsp;O <br> /|\\";
-  } else if (guessNum == 5) {
+  } else if (guessNum === 2) {
     guyId.innerHTML = "&nbsp;O <br> /|\\ <br> /";
-  } else if (guessNum == 6) {
+  } else if (guessNum === 1) {
     guyId.innerHTML = "&nbsp;O <br> /|\\ <br> /&nbsp;\\";
-  } else if (guessNum == 7) {
-    guyId.innerHTML = "<br><br>O____|  (laying dead hahaha)";
+  } else if (guessNum === 0) {
+    guyId.innerHTML = "<br><br><br> O____|  (laying dead hahaha)";
   }
+
 }
 // run it using the number of guesses as the position of the guy
 drawGuy();
