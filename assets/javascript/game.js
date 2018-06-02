@@ -1,27 +1,33 @@
-// make an array of words to choose from
-var words = ["home", "street", "game"];
-// the current chosen word from the array above
-// declared as a variable out here so it's accessible by all functions
-var randomWord;
-// make an empty arry to hold spaces and eventually letters
-var answerArray = [];
-// this selects the item on the page so later on you don't need to type all this.
-// Now to reference that spot where the secret word is, just use 'secretWordFields'
-var secretWord = document.getElementById("secret-word");
-// set number of guesses initially to zero
-var guessNum = 7;
+//This function ensures that JavaScript doesn't start until document(window) has loaded
+$(document).ready(function() { 
+
+//VARIABLES
+var words = ["space", "computer", "geek"];               //Array of words to be guessed
+var answerArray = [];                                    //Array to hold letters
+var randomword ;                                         //Selected random word
+var guess ;                                              //Guess
+var guessNum = 7;                                       //Remaining guesses
+var wins ;                                               //Wins
+var loses ;                                              //Loses
+var guy ;                                                //Guy character in game
+var space ;                                              //Number of spaces for letters
+
+//GET ELEMENTS
+var secretWordFields = document.getElementById("secret-word");
 var guesses = document.getElementById("guesses");
 guesses.innerHTML = guessNum;
-// this is the input where they are typing in guesses
-var guessedLetter = document.getElementById("guess");
+var guessLetter = document.getElementById("guess")
 
-// start the game or restart it
+
+
+
+//Start of the Game
 function setUpWord() {
-  // select a random index in the array to get a random word
+//Select a random index in the array to get a random word
   var randomIndex = Math.floor(Math.random() * words.length);
-  randomWord = words[randomIndex];
+  randomWord = words[i];
   console.log("randomWord is " + randomWord);
-  // populate the array with spaces for each of the letters in the secret word
+//Populate the array with spaces for each of the letters in the secret word
   for (i = 0; i < randomWord.length; i++) {
     answerArray[i] = "_";
   }
@@ -36,7 +42,7 @@ function makeGuess() {
   guesses.innerHTML = guessNum;
   // clear the input for the next letter
   guessedLetter.value = "";
-  // position the guy, add a limb or whatever
+  // position the guy
   drawGuy();
 }
 
@@ -66,4 +72,4 @@ function drawGuy() {
 
 }
 // run it using the number of guesses as the position of the guy
-drawGuy();
+drawGuy())
