@@ -2,11 +2,16 @@
 $(document).ready(function() { 
 
 //VARIABLES
-var words = ["space", "computer", "geek"];               //Array of words to be guessed
-var answerArray = [];                                    //Array to hold letters
-var randomword ;                                         //Selected random word
-var guess ;                                              //Guess
-var guessNum = 7;                                       //Remaining guesses
+var words = ["space", "computer", "geek"];
+console.log(words);               //Array of words to be guessed
+var answerArray = []; 
+console.log(answerArray);                                   //Array to hold letters
+var randomword ;   
+console.log(randomword);                                      //Selected random word
+var guess ;
+console.log(guess);                                              //Guess
+var guessNum = 7;
+console.log(guessNum);                                       //Remaining guesses
 var wins ;                                               //Wins
 var loses ;                                              //Loses
 var guy ;                                                //Guy character in game
@@ -14,8 +19,11 @@ var space ;                                              //Number of spaces for 
 
 //GET ELEMENTS
 var secretWordFields = document.getElementById("secret-word").innerHTML = answerArray;
+console.log(secretWordFields);
 var guesses = document.getElementById("guesses").innerHTML = guessNum;
+console.log(guesses);
 var guessLetter = document.getElementById("guess")
+console.log(guessLetter);
 
 
 
@@ -29,24 +37,29 @@ function setUpWord() {
 //Populate the array with spaces for each of the letters in the secret word
   for (i = 0; i < randomWord.length; i++) {
     answerArray[i] = "_";
+    
   }
   secretWordFields.innerHTML = answerArray;
 }
 
 
 function makeGuess() {
-    $("#makeGuess").on("click", function() {
+  $( "makeGuess" ).click(function() {
+  console.log(makeGuess);
   console.log("you guessed the letter " + guessedLetter.value);
   // add one to the number of guesses
   guessNum--;
+  console.log(guessNum--);
   // display the new number of guesses
   guesses.innerHTML = guessNum;
+  console.log(guesses.innerHTML = guessNum);
   // clear the input for the next letter
   guessedLetter.value = "";
+  console.log(guessedLetter.value = "");
   // position the guy
   drawGuy();
-  })}
-
+  })
+}
 
 //Calling the function to start the game
 setUpWord();
@@ -82,16 +95,11 @@ function drawGuy() {
 
   else if (guessNum === 0) {
     guyId.innerHTML = "<br><br><br> O____|  (laying dead hahaha)";
+    console.log(guyId.innerHTML);
   } 
 
 };
 drawGuy();
 // run it using the number of guesses as the position of the guy
-console.log(guy);
-console.log(guessNum);
-console.log(guess);
-console.log(setUpWord);
-console.log(guesses);
-console.log(guessedLetter);
-console.log(guyId);
+
 });
