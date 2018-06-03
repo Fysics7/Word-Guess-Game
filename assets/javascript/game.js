@@ -13,9 +13,8 @@ var guy ;                                                //Guy character in game
 var space ;                                              //Number of spaces for letters
 
 //GET ELEMENTS
-var secretWordFields = document.getElementById("secret-word");
-var guesses = document.getElementById("guesses");
-guesses.innerHTML = guessNum;
+var secretWordFields = document.getElementById("secret-word").innerHTML = answerArray;
+var guesses = document.getElementById("guesses").innerHTML = guessNum;
 var guessLetter = document.getElementById("guess")
 
 
@@ -25,16 +24,18 @@ var guessLetter = document.getElementById("guess")
 function setUpWord() {
 //Select a random index in the array to get a random word
   var randomIndex = Math.floor(Math.random() * words.length);
-  randomWord = words[i];
+  randomWord = words[randomIndex];
   console.log("randomWord is " + randomWord);
 //Populate the array with spaces for each of the letters in the secret word
   for (i = 0; i < randomWord.length; i++) {
     answerArray[i] = "_";
   }
-  secretWord.innerHTML = answerArray;
+  secretWordFields.innerHTML = answerArray;
 }
 
 function makeGuess() {
+
+  $("#makeGuess").on("click", function() {
   console.log("you guessed the letter " + guessedLetter.value);
   // add one to the number of guesses
   guessNum--;
@@ -44,9 +45,9 @@ function makeGuess() {
   guessedLetter.value = "";
   // position the guy
   drawGuy();
-}
+  })}
 
-// Run the function to start the game (this could be tied to a "start game" button)
+//Calling the function to start the game
 setUpWord();
 
 function drawGuy() {
@@ -56,20 +57,34 @@ function drawGuy() {
   // based on which position, show the guy in various degrees of peril
   if (guessNum === 6) {
     guyId.innerHTML = "&nbsp;O ";
-  } else if (guessNum === 5) {
-    guyId.innerHTML = "&nbsp;O <br> &nbsp;|";
-  } else if (guessNum === 4) {
-    guyId.innerHTML = "&nbsp;O <br> /|";
-  } else if (guessNum === 3) {
-    guyId.innerHTML = "&nbsp;O <br> /|\\";
-  } else if (guessNum === 2) {
-    guyId.innerHTML = "&nbsp;O <br> /|\\ <br> /";
-  } else if (guessNum === 1) {
-    guyId.innerHTML = "&nbsp;O <br> /|\\ <br> /&nbsp;\\";
-  } else if (guessNum === 0) {
-    guyId.innerHTML = "<br><br><br> O____|  (laying dead hahaha)";
-  }
+  } 
 
-}
+  else if (guessNum === 5) {
+    guyId.innerHTML = "&nbsp;O <br> &nbsp;|";
+  } 
+
+  else if (guessNum === 4) {
+    guyId.innerHTML = "&nbsp;O <br> /|";
+  } 
+
+  else if (guessNum === 3) {
+    guyId.innerHTML = "&nbsp;O <br> /|\\";
+  } 
+
+  else if (guessNum === 2) {
+    guyId.innerHTML = "&nbsp;O <br> /|\\ <br> /";
+  } 
+
+  else if (guessNum === 1) {
+    guyId.innerHTML = "&nbsp;O <br> /|\\ <br> /&nbsp;\\";
+  } 
+
+  else if (guessNum === 0) {
+    guyId.innerHTML = "<br><br><br> O____|  (laying dead hahaha)";
+  } 
+
+};
+drawGuy();
 // run it using the number of guesses as the position of the guy
-drawGuy())
+
+});

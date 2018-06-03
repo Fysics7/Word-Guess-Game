@@ -1,8 +1,61 @@
 * {
     font-family: 'Nanum Gothic Coding', monospace;
     }
+
+.jumbotron {
+
+    background-color: #000000;
+
+}
 body {
 
-    background-color: green
+    background-color: #000000;
+    
+}
 
+.display-4 {
+
+    text-align: center;
+    color: #008000;
+    font-size: 100px;
+}
+
+.lead {
+
+    text-align: center;
+    color: #008000;
+
+}
+
+.my-4 {
+
+    outline-color: #008000;
+    outline-style: dashed;
+    outline-width: 10px
+}
+
+.subtext {
+
+    text-align: center;
+    color: #008000
+}
+
+p {
+
+    text-align: center;
+    color: #008000
+}
+
+hr {
+
+    outline-color: #008000;
+    outline-style: dashed;
+    outline-width: 2px;
+
+
+}
+
+guy {
+
+    color: #008000;
 }

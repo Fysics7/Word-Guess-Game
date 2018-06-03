@@ -26,25 +26,35 @@
         <h1 class="display-4">HANGMAN</h1>
         <p class="lead">TRY TO GUESS THE WORD</p>
         <hr class="my-4">
-        <p>You Are Only Allowed 7 Guesses Before Your Friend Is In Peril</p>
+        <p class="subtext">You Are Only Allowed 7 Guesses Before Your Friend Is In Peril</p>
     </div>
 
-    <p>Secret Word: <span id="secret-word"></span></p>
-    <hr>
-    <p>Guess a letter: 
-      <input type="text" id="guess">
-      <button onclick="makeGuess()">Guess</button>
+    <p id="guy"></p>
+    <p>Secret Word:
+        <span id="secret-word"></span>
     </p>
-    <p>You have ONLY <span id="guesses"></span> guesses remaining</p> 
     <hr>
-    <p>Wins <span id="wins"></span></p>
+    <p>Guess a letter:
+        <input type="text" id="guess">
+        <button id="makeGuess">Guess</button>
+    </p>
+    <p>You have ONLY
+        <span id="guesses"></span> guesses remaining</p>
     <hr>
-    <p>Losses <span id="losses"></span></p>
+    <p>Wins
+        <span id="wins"></span>
+    </p>
+    <hr>
+    <p>Losses
+        <span id="losses"></span>
+    </p>
     <hr>
     <p>
-    <button id="button-reset" class="btn btn-dark clear" value="reset"><h1>Reset</h1></button>
+        <button id="button-reset" value="reset">
+            <h1>Reset</h1>
+        </button>
     </p>
-    <p id="guy"></p>
+
 </body>
 
 </html>
