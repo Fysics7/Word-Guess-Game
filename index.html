@@ -14,8 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding" rel="stylesheet">
     <!-- Added link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!--Link for JavaScript-->
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
+    
 
     <title>JMHangman</title>
 </head>
@@ -29,14 +28,14 @@
         <p class="subtext">You Are Only Allowed 7 Guesses Before Your Friend Is In Peril</p>
     </div>
    
-    <p id="guy"></p>
+    
     <p>Secret Word:
         <span id="secret-word"></span>
     </p>
     <hr>
     <p>Guess a letter:
         <input type="text" id="guess">
-        <button id="makeGuess">Guess</button>
+        <button onclick="makeGuess()">Guess</button>
     </p>
     <p>You have ONLY
         <span id="guesses"></span> guesses remaining</p>
@@ -55,6 +54,9 @@
         </button>
     </p>
 
+    <p id="guy"></p>
+    <!--Link for JavaScript-->
+    <script src="assets/javascript/game.js"></script>
 </body>
 
 </html>
