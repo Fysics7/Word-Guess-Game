@@ -33,9 +33,9 @@ function setUpWord() {
   secretWordFields.innerHTML = answerArray;
 }
 
-function makeGuess() {
 
-  $("#makeGuess").on("click", function() {
+function makeGuess() {
+    $("#makeGuess").on("click", function() {
   console.log("you guessed the letter " + guessedLetter.value);
   // add one to the number of guesses
   guessNum--;
@@ -47,11 +47,12 @@ function makeGuess() {
   drawGuy();
   })}
 
+
 //Calling the function to start the game
 setUpWord();
 
 function drawGuy() {
-  console.log("guy position at " + guessNum);
+    console.log("guy position at " + guessNum);
   var guyId = document.getElementById("guy");
   var guy = " O ";
   // based on which position, show the guy in various degrees of peril
@@ -86,5 +87,11 @@ function drawGuy() {
 };
 drawGuy();
 // run it using the number of guesses as the position of the guy
-
+console.log(guy);
+console.log(guessNum);
+console.log(guess);
+console.log(setUpWord);
+console.log(guesses);
+console.log(guessedLetter);
+console.log(guyId);
 });
